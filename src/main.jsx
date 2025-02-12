@@ -7,7 +7,7 @@ import UploadFile from './UploadFile.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App numberCount={5}/>
-    <App numberCount={1} />
+    <App numberCount={8} />
     <div className='flex-col flex'>
       <UploadFile />
     </div>
