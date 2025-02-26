@@ -7,5 +7,5 @@ import SidebarLayout from './SidebarLayout.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <SidebarLayout />
-  </StrictMode>,
+  </StrictMode>
 )
