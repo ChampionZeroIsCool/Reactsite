@@ -1,5 +1,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import UploadFile from './UploadFile'
 
 const user = {
   name: 'Tom Cook',
@@ -172,7 +173,9 @@ export default function Layout() {
           </div>
         </header>
         <main>
-          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">{/* Your content */}</div>
+          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">{
+            <UploadFile />
+          }</div>
         </main>
       </div>
     </>
