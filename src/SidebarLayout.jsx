@@ -1,4 +1,4 @@
-'use client'
+import Bento from './Bento.jsx'
 
 import { useState } from 'react'
 import {
@@ -290,7 +290,9 @@ export default function SidebarLayout() {
           </div>
 
           <main className="py-10">
-            <div className="px-4 sm:px-6 lg:px-8">{/* Your content */}</div>
+            <div className="px-4 sm:px-6 lg:px-8">{
+                <Bento />
+            }</div>
           </main>
         </div>
       </div>
