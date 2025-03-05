@@ -100,9 +100,12 @@ export default function SidebarLayout() {
                         {navigation.map((item) => (
                           <li key={item.name}>
                             <button
-                              onClick={() => console.log("hello")}
+                              onClick={() => {
+                                setCurrentNav(item.name)
+                                setSidebarOpen(false)
+                              }}
                               className={classNames(
-                                item.current
+                                item.name === currentNav
                                   ? 'bg-gray-800 text-white'
                                   : 'text-gray-400 hover:bg-gray-800 hover:text-white',
                                 'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold',
