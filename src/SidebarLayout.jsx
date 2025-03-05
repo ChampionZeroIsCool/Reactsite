@@ -49,6 +49,10 @@ function classNames(...classes) {
 
 export default function SidebarLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [currentNav, setCurrentNav] = useState('Dashboard')
+  console.log(currentNav)
+
+  
 
   return (
     <>
@@ -95,8 +99,8 @@ export default function SidebarLayout() {
                       <ul role="list" className="-mx-2 space-y-1">
                         {navigation.map((item) => (
                           <li key={item.name}>
-                            <a
-                              href={item.href}
+                            <button
+                              onClick={() => console.log("hello")}
                               className={classNames(
                                 item.current
                                   ? 'bg-gray-800 text-white'
@@ -106,7 +110,7 @@ export default function SidebarLayout() {
                             >
                               <item.icon aria-hidden="true" className="size-6 shrink-0" />
                               {item.name}
-                            </a>
+                            </button>
                           </li>
                         ))}
                       </ul>
@@ -167,10 +171,12 @@ export default function SidebarLayout() {
                   <ul role="list" className="-mx-2 space-y-1">
                     {navigation.map((item) => (
                       <li key={item.name}>
-                        <a
-                          href={item.href}
+                        <button
+                          onClick={() =>
+                            setCurrentNav(item.name)
+                          }
                           className={classNames(
-                            item.current
+                            item.name === currentNav
                               ? 'bg-gray-800 text-white'
                               : 'text-gray-400 hover:bg-gray-800 hover:text-white',
                             'group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold',
@@ -178,7 +184,7 @@ export default function SidebarLayout() {
                         >
                           <item.icon aria-hidden="true" className="size-6 shrink-0" />
                           {item.name}
-                        </a>
+                        </button>
                       </li>
                     ))}
                   </ul>
@@ -291,7 +297,8 @@ export default function SidebarLayout() {
 
           <main className="py-10">
             <div className="px-4 sm:px-6 lg:px-8">{
-                <Bento />
+              currentNav === 'Dashboard' ?
+                <Bento /> : null
             }</div>
           </main>
         </div>
